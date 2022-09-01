@@ -52,7 +52,7 @@ In this lab, I will expect you to develop a GitHub workflow for the project subm
 
 > Note that I recommend that you try your best to work within the lines allotted to you, without adding new lines to your code chunk. This means using the down arrow instead of the return key to move to a new line. This will help avoid merge conflicts later on. ...even though I fully trust that you'll become whizzes at fixing those when they arise! :)
 
-9. All code chunks must be reviewed on GitHub.com by at least one other team member following a pull request and before merging, and all team members must review at least one chunk. The course grader and I will be checking for this when evaluating your submission.
+9. All code chunks must be reviewed on GitHub.com by at least one other team member following a pull request and before merging, and all team members must review at least one chunk. Reviewers may request changes to the code, edits to the comments, suggestions for better labeling/aeshetics, and/or simply commend their peers' work@ The course grader and I will be checking for this when evaluating your submission.
 
 ## Write blog post
 
