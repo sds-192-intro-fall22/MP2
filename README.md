@@ -1,56 +1,67 @@
-# Mini-Project 1
+# Mini-Project 2
 
 # Overview
 
-In this mini-project, you will create at least two data visualizations of variables in the [College Scorecard](https://collegescorecard.ed.gov/) dataset and then write up your findings in a short blog post (400-500 words). You will study the data documentation, review the data dictionary to select variables for your analysis, and then finally produce your plots. In your blog post, you will detail how the data in this dataset was produced, along with what we learn by reviewing the plots. 
+> Please note that many aspects of this project are informed by similar projects designed for Professor Albert Kim's and Professor Ben Baumer's SDS 192: Introduction to Data Science courses at Smith College. 
+
+Every year the U.S. Federal Election Commission publishes data that details how candidates and committees raise and spend money in federal elections. In this mini-project, you will perform some data wrangling in order to extrapolate insights from the FEC's campaign contributions dataset in the 2015-2016 election cycle. You will then write up your findings in a short blog post (400-500 words). You will be expected to engage the data wrangling verbs, perform at least one join, and showcase your ability to collaborate effectively in GitHub. In your blog post, you will detail how the data in this dataset was produced, along with what we learn through data wrangling. 
+
+To access the data for this project, you will engage the `fec16` package developed by fellow Smithies: Prof Ben Baumer, Rana Gahwagy, Irene Ryan, and Marium A. Tapal! 
 
 # Learning Goals
 
-* Navigate different forms of data documentation
-* Recognize differences in variable types and how they get assigned to `R` data objects 
-* Examine variation in and co-variation between data variables through exploratory plotting in `R`
-* Communicate data findings in writing and effective data graphics
+* Apply the verbs of data wrangling to produce insights from data
+* Join data across multiple tables
+* Effectively collaborate with team members in GitHub
+* Communicate data findings in writing
 * Evaluate the ethical dimensions of data resources
 
 # Detailed Instructions
 
+## Establish a GitHub Workflow
+
+In this lab, I will expect you to develop a GitHub workflow for the project submission. This means that all group members should create issues associated with tasks they are assigned to in GitHub, work in separate branches of the repo to make those changes, and issue Pull Requests to merge their changes into the project. You should also establish a review process to review each other's code before merging. 
+
+1. After reading all of the requirements of this project, I recommend that you delegate tasks amongst group members, start recording those as Issues in the GitHub repo, and assign Issues to group members. 
+
+2. Create separate branches of the repo for each team member.
+
+3. Decide who will be group member 1, 2, 3, and so on.
+
 ## Set up your environment
 
-1. In RStudio, `File` > `New Project` > `Version Control` > `Git` and then copy the URL to this repo. Open `scorecard_analysis.qmd` and add your group member's names to the header (lines 5, 7, and 9). 
-2. You should have already installed the `rscorecard` package in lab 1. If for some reason it is not installed. Install the `rscorecard` package by entering the following in your console: 
+4. In RStudio, `File` > `New Project` > `Version Control` > `Git` and then copy the URL to this repo. **Switch to your branch.** 
 
-`install.packages("rscorecard")`
+5. Open `fec_analysis.qmd` and add your name to the header at the appropriate location (lines 5, 7, and 9). Keep in mind that if you enter your name in the same line number as one of your teammates, you will be dealing with a merge conflict later. This is why it was important to assign numbers in Step 3. At this point I would recommend that you save the file, stage and commit your changes, push the changes to GitHub, have all team members issue their first pull request, merge all of the changes, delete the personal branches, and then recreate the branches for the next round of changes. This will help you practice the workflow and work out any kinks early on. After you've followed these steps, be sure to pull the changes back into RStudio before moving on with the project. 
 
-3. If you still have access to your API key from lab 1, copy this API key into line 31 of `scorecard_analysis.qmd`. Run that code chunk. If you don't have that key, navigate [here](https://api.data.gov/signup/) to sign up for an API key through Data.gov. After you enter your name and email, the API key will be emailed to you. 
+4. Install the `fec16` package:
 
-## Get to know the scorecard data
+`install.packages("fec16")`
 
-4. Download **both** the Scorecard Data Dictionary and the Institution-Level Technical Documentation [here](https://collegescorecard.ed.gov/data/documentation/). Read pages 2-3 of the Technical Documentation to learn more about this dataset. You should already be somewhat familiar with the format of the data dictionary from lab 1. Refer back to that lab for help navigating it.  
+## Get to know the FEC data
 
-5. In addition to `unitid` and `instnm`, select five more variables from the data dictionary that you'd like to work with in your analysis. There is a lot of missing data in this dataset so I encourage you to select variables from those that we used in lab 1; all of the variables we examined in lab 1 are suitable for this assignment. We're only going to be looking at MA schools, so you can leave variables that record the state and region of the institution off of your list. *Select at least one numeric variable, and at least one ordinal variable.* Read up on these selected variables in the Technical Documentation (Command/Control + F to find the variable name in the PDF.)
+5. Read about the history and mission of the FEC [here](https://www.fec.gov/about/mission-and-history/).
 
-## Import and prepare data
+6. You should review this [vignette](https://cran.r-project.org/web/packages/fec16/vignettes/fec_vignette.html) as a reference for the data included in these files and as inspiration for your project. Note however, that you may not use the examples in these vignettes in your submission.  
 
-6. On line 38 of `scorecard_analysis.qmd`, add the list of variable names (from column 6 in the data dictionary) as additional arguments to the `sc_select()` function. *Note that you should supply these names in lowercase.* Run the code chunk. 
-7. Check out the data frame, and note columns with many missing values. **If you've selected variables other than the variables that we used in lab 1 and the values are missing in more than 25% of rows, return to the data dictionary and select new columns.** Re-run the code. 
-8. Recode your ordinal variable in the code chunk starting at line 43. Be sure to reference lab 1 for help with this!
+## Wrangle the Data
 
-## Design two data visualizations
+7. As a group, devise a question about the 2015-2016 campaign contributions, spending, and/or results that you would like to answer with your data. Your question should be concise and should be a question that can be answered with the data available to you via descriptive data analysis. Avoid questions that require predictive analysis or analysis of variables not represented in this dataset.
 
-9. As a group, devise a question about the state of MA colleges in 2018 that you would like to answer with your data. Your question should be concise and should be a question that can be answered with the data available to you. Avoid questions that require predictive analysis or analysis of variables that not represented in this dataset. 
+8. Write one code chunk per team member that leverages some combination of the 6 data wrangling verbs to produce a table or a plot that offers insight into campaign contributions, spending, and/or results in the 2015-2016 election cycle. You must both subset and aggregate the data in some way, and use at least one join in the analysis. All plots must be labeled with all five components of data context. 
 
-10. Create two data visualizations showcasing that help address your question. At least one plot should visualize distributions and/or frequencies. You may select how you would like to design the second plot. However, both plots should be clearly related to the question you've asked. Be sure to label your plots with all five required components of context. Add a caption to both plots explaining how you've mapped values onto different plot aesthetics. 
+> Note that I recommend that you try your best to work within the lines allotted to you, without adding new lines to your code chunk. This means using the down arrow instead of the return key to move to a new line. This will help avoid merge conflicts later on. ...even though I fully trust that you'll become whizzes at fixing those when they arise! :)
+
+9. All code chunks must be reviewed on GitHub.com by at least one other team member following a pull request and before merging, and all team members must review at least one chunk. The course grader and I will be checking for this when evaluating your submission.
 
 ## Write blog post
 
+> Note that you do not need to use the long and elegant GitHub workflow for composing the blog post, as I understand that many students would perfer to write this up in Google Docs and the copy it over to RStudio. The long and elegant workflow is only required for the coding sections of the project. 
+
 10. In 400-500 words, you should write a blog post reporting on your visualization:
-  * Paragraph 1: Introduce the dataset, how the data was produced, and what you specifically will be visualizing in your plots. 
-  * Paragraph 2: Report on findings from your visualizations.
-    * For each plot, you should summarize at least one quantitative fact that we can extrapolate, **and** interpret that finding. (e.g. on this plot, we can see that ... This indicates that ...)
-  * Paragraph 3: Summarize the key takeaway from your analysis and describe at least one ethical concern we should consider when analyzing this data. You may consider:
-    * What assumptions and commitments informed the design of this dataset?
-    * Who has had a say in data collection and analysis regarding this dataset? Who has been excluded?
-    * What are the benefits and harms of this dataset, and how are they distributed amongst diverse social groups?
+  * Paragraph 1: Introduce the dataset and the question you posed when approaching the analysis. 
+  * Paragraph 2: Report on findings from your analysis.
+  * Paragraph 3: Summarize the key takeaway from your analysis and describe at least one ethical concern we should consider when joining data across data frames.
     
 ## Record standards and submit assignment
 
@@ -62,17 +73,17 @@ In this mini-project, you will create at least two data visualizations of variab
 
 You will be evaluated on the extent to which your mini-project demonstrates fluency in the following course learning dimensions:
 
-* Understanding Datasets:
-  * 1 point - Demonstrates an ability to interpret data dictionaries
-  * 1 point - Demonstrates an ability to recognize different types of variables
-  * 1 point - Demonstrates an ability to detail the provenance of a dataset (how the data was produced) in writing
-* Visualization Aesthetics
-  * 1 point - Demonstrates an ability to map variables onto appropriate plot aesthetics
-  * 1 point - Demonstrates an ability to adjust the scales of plot aesthetics
-  * 1 point - Demonstrates an ability to address overplotting
-* Plotting Frequencies and Distributions
-  * 1 point - Demonstrates an ability to represent statistical information on a plot
-  * 1 point - Demonstrates an ability to accurately label plots with all five required pieces of context
-  * 1 point - Demonstrates an ability to accurately summarize and interpret plot findings in writing
+* Transforming Data
+  * 1 point - Demonstrates an ability to subset data
+  * 1 point - Demonstrates an ability to aggregate data
+  * 1 point - Demonstrates an ability to interpret the results of data wrangling
+* Joining Data
+  * 1 point - Demonstrates an ability to join to data frames
+  * 1 point - Demonstrates an ability to select the most appropriate type of join
+  * 1 point - Demonstrates an ability to reflect upon ethical concerns of joining information across data frames
+* GitHub
+  * 1 point - Demonstrates an ability to delegate tasks effectively via Issues
+  * 1 point - Demonstrates an ability to collaborate across multiple GitHub branches
+  * 1 point - Demonstrates an ability to review collaborators' code
   
 

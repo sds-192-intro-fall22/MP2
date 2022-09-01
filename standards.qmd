@@ -1,5 +1,5 @@
 ---
-title: "SDS 192 Mini-Project 1 Standards"
+title: "SDS 192 Mini-Project 2 Standards"
 subtitle: "SDS 192"
 author: 
 - name: Author One
@@ -22,15 +22,15 @@ output:
 ---
 
 
-# Understanding Datasets
+# Transforming Data
 
 Fill response here...
 
-# Visualization Aesthetics
+# Joining Data
 
 Fill response here...
 
-# Plotting Frequencies and Distributions
+# GitHub
 
 Fill response here...
 

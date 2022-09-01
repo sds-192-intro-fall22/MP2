@@ -1,5 +1,5 @@
 ---
-title: "SDS 192 Mini-Project 1 Contributions"
+title: "SDS 192 Mini-Project 2 Contributions"
 subtitle: "SDS 192"
 author: 
 - name: Author One
@@ -22,14 +22,14 @@ output:
 ---
 
 
-# Group Member 1
+# Group Member 1: NAME
 
 Fill response here...
 
-# Group Member 2
+# Group Member 2: NAME
 
 Fill response here...
 
-# Group Member 3
+# Group Member 3: NAME
 
 Fill response here...
