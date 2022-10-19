@@ -36,13 +36,14 @@ In this lab, I will expect you to develop a GitHub workflow for the project subm
 
 4. Install the `fec16` package:
 
-`install.packages("fec16")`
+`install.packages("remotes")`
+`remotes::install_github("baumer-lab/fec16")`
 
 ## Get to know the FEC data
 
 5. Read about the history and mission of the FEC [here](https://www.fec.gov/about/mission-and-history/).
 
-6. You should review this [vignette](https://cran.r-project.org/web/packages/fec16/vignettes/fec_vignette.html) as a reference for the data included in these files and as inspiration for your project. Note however, that you may not use the examples in these vignettes in your submission.  
+6. You should review this [README](https://github.com/baumer-lab/fec16) as a reference for the data included in these files and as inspiration for your project. Note however, that you may not use the examples in these vignettes in your submission.  
 
 ## Wrangle the Data
 

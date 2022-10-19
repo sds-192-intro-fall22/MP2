@@ -21,12 +21,12 @@ output:
     code_folding: show
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 library(tidyverse)
 library(fec16)
 ```
 
-```{r helper-chunk, include=FALSE}
+```{r helper-chunk}
 # Look at help file
 ?contributions
 
