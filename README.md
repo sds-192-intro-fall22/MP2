@@ -49,11 +49,11 @@ In this lab, I will expect you to develop a GitHub workflow for the project subm
 
 7. As a group, devise a question about the 2015-2016 campaign contributions, spending, and/or results that you would like to answer with your data. Your question should be concise and should be a question that can be answered with the data available to you via descriptive data analysis. Avoid questions that require predictive analysis or analysis of variables not represented in this dataset.
 
-8. Write one code chunk per team member that leverages some combination of the 6 data wrangling verbs to produce a table or a plot that offers insight into campaign contributions, spending, and/or results in the 2015-2016 election cycle. You must both subset and aggregate the data in some way, and use at least one join in the analysis. All plots must be labeled with all five components of data context. 
+8. Write one code chunk per team member that leverages some combination of the 6 data wrangling verbs to produce a table or a plot that offers insight into campaign contributions, spending, and/or results in the 2015-2016 election cycle. You must both subset and aggregate the data in some way, and use at least one join in the analysis. All plots must be labeled with all five components of data context. You may help each other write your code chunks, but every team members should ultimately push their own chunk to GitHub.
 
 > Note that I recommend that you try your best to work within the lines allotted to you, without adding new lines to your code chunk. This means using the down arrow instead of the return key to move to a new line. This will help avoid merge conflicts later on. ...even though I fully trust that you'll become whizzes at fixing those when they arise! :)
 
-9. All code chunks must be reviewed on GitHub.com by at least one other team member following a pull request and before merging, and all team members must review at least one chunk. The course grader and I will be checking for this when evaluating your submission.
+9. All code chunks must be reviewed on GitHub.com by at least one other team member following a pull request and before merging, and all team members must review at least one chunk. Reviewers may request changes to the code, edits to the comments, suggestions for better labeling/aeshetics, and/or simply commend their peers' work@ The course grader and I will be checking for this when evaluating your submission.
 
 ## Write blog post
 
